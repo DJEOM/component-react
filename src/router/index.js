@@ -24,7 +24,7 @@ export default function RouterView() {
           }
         ></Route>
         <Route
-          path="/use/props"
+          path="/use/props/:num"
           element={
             <Suspense fallback={<div>loading</div>}>
               <UseProps />
@@ -32,7 +32,7 @@ export default function RouterView() {
           }
         ></Route>
         <Route
-          path="/use/children"
+          path="/use/children/:num"
           element={
             <Suspense fallback={<div>loading</div>}>
               <Children />

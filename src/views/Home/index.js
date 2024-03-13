@@ -5,8 +5,15 @@ import "../../App.css";
 import { useNavigate } from "react-router-dom";
 export default function Home() {
   let navigate = useNavigate();
-  const fn = (tempalte) => {
-    navigate(`/use/${tempalte}`);
+  /* 测试路由传参 */
+
+  const fn = (tempalte, id) => {
+    // 1. url传参
+    // navigate(`/use/${tempalte}?id=${id}`);
+    // 2. state传参
+    // navigate(`/use/${tempalte}`, { state: { id, age: 25 } });
+    // 3. params传参(动态路由传参)
+    navigate(`/use/${tempalte}/${id}`);
   };
   return (
     <div className="App">
@@ -20,10 +27,10 @@ export default function Home() {
         {/* 2. Link */}
         {/* <Link to="/use/props">1. 通过Props传递组件</Link> */}
         {/* 3. 使用编程式跳转 */}
-        <div style={{ cursor: "pointer" }} onClick={() => fn("props")}>
+        <div style={{ cursor: "pointer" }} onClick={() => fn("props", "1")}>
           1. 通过Props传递组件
         </div>
-        <div style={{ cursor: "pointer" }} onClick={() => fn("children")}>
+        <div style={{ cursor: "pointer" }} onClick={() => fn("children", "2")}>
           2. 利用children属性
         </div>
       </header>

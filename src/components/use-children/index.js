@@ -1,6 +1,6 @@
 import { useState } from "react";
 // 通过children prop传递参数
-
+import { useLocation, useParams } from "react-router-dom";
 // 总组件
 function ParentComponent({ children }) {
   return <div>{children}</div>;
@@ -25,6 +25,10 @@ function ComponentTwo({ data }) {
 
 export default function App() {
   const [data, setData] = useState("初始参数");
+  let location = useLocation();
+  let params = useParams();
+  console.log("location", location);
+  console.log("params", params);
   return (
     <>
       <ParentComponent>
