@@ -1,4 +1,5 @@
-import { useState } from "react";
+// import { useState } from "react";
+import { useImmer } from "use-immer";
 import { useLocation, useParams } from "react-router-dom";
 
 // 子组件
@@ -19,7 +20,8 @@ function ComponentOne({ ComponentTwo }) {
 }
 
 export default function App() {
-  const [data, setData] = useState("初始参数");
+  // const [data, setData] = useState("初始参数");
+  const [data, setData] = useImmer("初始参数");
   let location = useLocation();
   let params = useParams();
   console.log("location", location);
