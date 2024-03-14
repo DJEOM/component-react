@@ -22,6 +22,10 @@ let routesPath = [
     path: "/use/children/:num",
     component: React.lazy(() => import("../components/use-children")),
   },
+  {
+    path: "/use/pattern/:num",
+    component: React.lazy(() => import("../components/pattern-feature")),
+  },
 ];
 export default function RouterView() {
   return (
@@ -30,6 +34,7 @@ export default function RouterView() {
         {routesPath.map((item) => {
           return (
             <Route
+              key={item.path}
               path={item.path}
               element={
                 <Suspense fallback={<div>loading</div>}>

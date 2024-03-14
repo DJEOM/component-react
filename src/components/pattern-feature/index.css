@@ -1,0 +1,26 @@
+input[type=text]{
+  border: 1px solid #000;
+  border-radius: 4px;
+  outline: none;
+  padding: 6px;
+};
+
+input[type=text]:invalid {
+  border: red 1px solid;
+
+  +span::before {
+    content: '✖';
+    display: inline;
+    color: red;
+  }
+}
+
+input[type=text]:valid {
+  border: green 1px solid;
+
+  +span::before {
+    content: '✓';
+    display: inline;
+    color: green;
+  }
+}

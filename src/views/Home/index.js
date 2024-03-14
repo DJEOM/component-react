@@ -33,6 +33,9 @@ export default function Home() {
         <div style={{ cursor: "pointer" }} onClick={() => fn("children", "2")}>
           2. 利用children属性
         </div>
+        <p style={{ cursor: "pointer" }} onClick={() => fn("pattern")}>
+          HTML原生属性pattern校验
+        </p>
       </header>
     </div>
   );
